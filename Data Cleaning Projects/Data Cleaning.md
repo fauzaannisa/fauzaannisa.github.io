@@ -1,2 +1,3 @@
 This is a folder contains data cleaning and transformation projects by Fauza Annisa.
 The projects utilized various types of data, mainly retrieved from Kaggle.
+Through these projects, the issues revolved around data cleaning such as misformatted data, missing values, duplicates, and incomplete entries will be resolved to ensure the accuracy and reliability of the data for further analysis.

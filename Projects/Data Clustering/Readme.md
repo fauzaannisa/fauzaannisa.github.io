@@ -1,0 +1,5 @@
+The project aims to discover the association between COVID-19 vaccination deployment and the stringency index level implemented by governments in Southeast Asia nations. The public restriction is the outcome of a stringent policy that affects several aspects, from mobility to economic growth.
+The second purpose is to define the cluster between 11 Southeast Asia countries and discover particular similarities and patterns each cluster encountered to tackle the COVID-19 spread. Various characteristics are assumedly different between the eleven nations, such as Gross National Income, poverty level, population density, life expectancy, and healthcare systems.
+The importance of this learning is to see the different behaviours in each cluster in anticipation of further action regarding healthcare improvement or mitigation efforts. Therefore, the expected output of this project is to:
+1. Discover the significant relationship between vaccination deployment and stringency index level in Southeast Asia countries.
+2. Define the clusters between 11 Southeast Asia countries based on disease prevalence, economic, and well-being variables. 

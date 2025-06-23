@@ -1,14 +1,4 @@
 title: Fauza Annisa
 photo: /img-assets/Photo-ID.jpeg
 theme: jekyll-theme-minimal
-sass:
-  style: compressed
-
-# Add this to make sure your CSS gets loaded:
-defaults:
-  -
-    scope:
-      path: ""
-    values:
-      css: "/assets/css/custom.css"
 description: A Data Science graduate with over 3 years of experience in data analytics within the e-commerce industry, concentrating on data analysis, data visualization, and market research.

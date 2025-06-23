@@ -1,11 +1,12 @@
 <style>
 img[alt="Logo"] {
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   object-fit: cover;
   display: block;
   margin: 0 auto;
+  align: left;
 }
 </style>
 

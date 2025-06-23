@@ -1,5 +1,3 @@
-<img src="/img-assets/Photo-ID.jpeg" alt="Fauza's Photo"
-     style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; display: block; margin-left: 0; margin-right: auto;">
 
 # Marketing Data Analyst
 

@@ -5,8 +5,9 @@ img[alt="Logo"] {
   border-radius: 50%;
   object-fit: cover;
   display: block;
-  margin: 0 auto;
-  align: left;
+  margin-left: 0;
+  margin-right: auto;
+
 }
 </style>
 

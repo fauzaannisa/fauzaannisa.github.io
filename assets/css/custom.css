@@ -1,7 +1,9 @@
-.site-logo img {
-  width: 120px;           /* Adjust size as needed */
-  height: 120px;
-  border-radius: 50%;     /* Makes it a circle */
-  object-fit: cover;      /* Keeps it centered and cropped */
-  border: 2px solid #ccc; /* Optional border */
+img[alt="Logo"] {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin-left: 0;
+  margin-right: auto;
 }

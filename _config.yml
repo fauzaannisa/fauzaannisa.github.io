@@ -1,4 +1,15 @@
 title: Fauza Annisa
 logo: /img-assets/Photo-ID.jpeg
+theme: minima
+sass:
+  style: compressed
+
+# Add this to make sure your CSS gets loaded:
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      css: "/assets/css/custom.css"
 description: A Data Science graduate with over 3 years of experience in data analytics within the e-commerce industry, concentrating on data analysis, data visualization, and market research.
 theme: jekyll-theme-minimal

@@ -1,7 +1,7 @@
 <style>
 img[alt="Logo"] {
-  width: 170px;
-  height: 170px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   object-fit: cover;
   display: block;

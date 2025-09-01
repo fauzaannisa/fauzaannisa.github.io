@@ -6,13 +6,11 @@ library(ggplot2)
 library(factoextra)
 library(corrplot)
 
-##Numbering on specific comment indicates the sub-section on the coursework##
-
-#2.1 COVID-19 Data Loading
+#1. COVID-19 Data Loading
 covid <- read.csv("owid-covid-data.csv", header = TRUE)
 View(sea)
 
-#2.2 Extract date to separate day, month, year for visualisation purposes
+#2. Extract date to separate day, month, year for visualisation purposes
 covid = covid %>%
   dplyr::mutate(year = lubridate::year(date), 
                 month = lubridate::month(date), 
@@ -73,7 +71,7 @@ sea_clean <- subset(sea1,
                       sea1$stringency_index<iqrup)
 View(sea_clean)
 
-#2.3.1 Pearson Correlation between people fully vaccinated per hundred with stringency index
+#3. Pearson Correlation between people fully vaccinated per hundred with stringency index
 cor(sea_clean$people_fully_vaccinated_per_hundred, sea_clean$stringency_index,  method = "pearson")
 
 #Correlation scatter plot between Vaccination and Stringency Index
@@ -86,7 +84,7 @@ sea_scale = scale(sea_clean[,7:15], center = TRUE, scale = TRUE)
 sea_scale = as_tibble(sea_scale)
 
 
-#2.3.2 PCA Analysis
+#4. PCA Analysis
 sea_clean_pca = prcomp(sea_scale[,1:9])
 summary(sea_clean_pca)
 pca_transform = as.data.frame(-sea_clean_pca$x[,1:2])
@@ -104,7 +102,7 @@ ggplot(pca_var, aes(x = 1:9, y = cumsum(proportional_variance))) +
                      breaks = seq.default(from = 0.6, to = 1, by = 0.05), labels = scales::percent_format(accuracy = 1)) +
   labs(caption = "Fig. 1 Explaining dataset variance using PCA")
 
-#adding the PC1 and PC2 to the main data frame (sea_clean)
+#Adding the PC1 and PC2 to the main data frame (sea_clean)
 sea_scale[,c("PC1", "PC2")] = sea_clean_pca$x[,1:2]
 pca_transform$location = sea_clean$location #adding location for plotting
 
@@ -115,14 +113,14 @@ ggplot(sea_scale, aes(x = PC1, y = PC2, color = location)) +
        colour = "Country") +
   theme(text=element_text(size=20)) 
 
-#2.3.3 Silhouette Analysis
+#5. Silhouette Analysis
 pca_transform <- subset(pca_transform, select = -c(location))
 set.seed(123)
 
 #Running the optimal clusters of k
 fviz_nbclust(pca_transform, kmeans, method = "silhouette")
 
-#2.3.4 K-MEANS Clustering
+#6. K-MEANS Clustering
 sea_scale <- subset(sea_scale, select = -c(location)) #removing the character attributes
 elbow1 <- kmeans(pca_transform, centers = 2, nstart = 20)
 fviz_cluster(elbow1, geom = "point", data = pca_transform) + 
@@ -136,12 +134,12 @@ sea_clean$Cluster = elbow1$cluster
 sea_clean = mutate(sea_clean,
                    Cluster_name = case_when(Cluster == 1 ~ "One",Cluster == 2 ~ "Two"))
 
-#2.3.5 Pearson Correlation Matrix
+#7. Pearson Correlation Matrix
 seacorr <- sea_clean[,7:17]
 seacorr1 <- cor(seacorr)
 corrplot(seacorr1, method="number", number.cex = 0.7)
 
-#3.4 Supported visualisation for discussion
+#8. Supported visualisation for discussion
 #Filtering the cluster
 seaclu1 <- filter(sea_clean, Cluster_name=="One")
 seaclu2 <- filter(sea_clean, Cluster_name=="Two")
@@ -162,7 +160,7 @@ sea_clu_mean2 <- seaclu2 %>%
                                          stringency_index = max(stringency_index), .groups = 'drop') %>%
                                  subset(year<2022)
 
-#add unavailable data to fill in the visualisation
+#Add unavailable data to fill in the visualisation
 sea_clu_mean1 <- sea_clu_mean1 %>% add_row(MonthName= 'Jan',
                                              year=2020,
                                              new_cases_per_million=0,
